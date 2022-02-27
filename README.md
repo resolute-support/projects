@@ -1,3 +1,3 @@
 # projects
 
-Code for arduino projects we have
+Code for assorted  projects Resolute Education has
