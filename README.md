@@ -1,3 +1,3 @@
 # projects
 
-Code for assorted  projects Resolute Education has
+Code for assorted Resolute Education products
