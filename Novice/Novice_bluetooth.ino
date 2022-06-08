@@ -131,7 +131,6 @@ int wish_tempo[] = {
 
 void setup()
 {
-  delay(2000);
 
   Serial.begin(9600);
   pinMode(5, INPUT);
@@ -148,9 +147,9 @@ void setup()
 
 void loop()
 {
-  //straight();
   check_bluetooth();
-  //check_mic();
+  //ultrasonic();
+  //line();
 }
 
 void check_bluetooth()
@@ -268,13 +267,13 @@ void ultrasonic()
   Serial.print(distance_cm);
   Serial.println(" cm");
 
-  delay(100);
+  delay(50);
 
-  if (distance_cm > 8 and distance_cm < 500)
+  if (distance_cm > 8 and distance_cm < 500 and distance_cm != 0)
   {
     straight();
   }
-  else if (distance_cm <= 8 and distance_cm < 500)
+  else if (distance_cm <= 8 and distance_cm < 500 and distance_cm != 0)
   {
     new_route();
   }
@@ -293,12 +292,12 @@ void line()
 
   else if (left == 0 and right == 1)
   {
-    line_left();
+    line_right();
   }
 
   else if (left == 1 and right == 0)
   {
-    line_right();
+    line_left();
   }
 }
 
@@ -353,12 +352,12 @@ void new_route()
 {
   still();
   delay(400);
+
   back();
-  delay(300);
+  delay(400);
+
   Left();
-  delay(150);
-  Right();
-  delay(300);
+  delay(400);
 }
 
 void line_left()
