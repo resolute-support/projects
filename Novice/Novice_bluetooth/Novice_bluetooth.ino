@@ -187,71 +187,91 @@ void check_bluetooth()
   {
     back();
   }
+  else if (data == '0')
+  {
+    noTone(6);
+    noTone(7);
+  }
   else if (data == '1')
   {
-    sing();
+    tone(6, 31);
+    tone(7, 31);
   }
   else if (data == '2')
   {
-    sing();
+    tone(6, 41);
+    tone(7, 41);
   }
   else if (data == '3')
   {
-    sing();
+    tone(6, 62);
+    tone(7, 62);
   }
   else if (data == '4')
   {
-    sing();
+    tone(6, 87);
+    tone(7, 87);
   }
   else if (data == '5')
   {
-    sing();
+    tone(6, 100);
+    tone(7, 100);
   }
   else if (data == '6')
   {
-    sing();
+    tone(6, 131);
+    tone(7, 131;
   }
   else if (data == '7')
   {
-    sing();
+    tone(6, 196);
+    tone(7, 196);
   }
   else if (data == '8')
   {
-    sing();
+    tone(6, 294);
+    tone(7, 294);
   }
-
-}
-
-void sing()
-{
-    Serial.println(" 'We wish you a Merry Christmas'");
-    int size = sizeof(wish_melody) / sizeof(int);
-    for (int thisNote = 0; thisNote < size; thisNote++)
-    {
-      int noteDuration = 1000 / wish_tempo[thisNote];
-      buzz(melodyPin, wish_melody[thisNote], noteDuration);
-      int pauseBetweenNotes = noteDuration * 1;
-      delay(pauseBetweenNotes);
-      buzz(melodyPin, 0, noteDuration);
-    }
-}
-
-void buzz(int targetPin, long frequency, long length)
-{
-  long delayValue = 1000000 / frequency / 3;
-
-  long numCycles = frequency * length / 1000;
-
-  for (long i = 0; i < numCycles; i++)
+  else if (data == '9')
   {
-    digitalWrite(6, HIGH);
-    digitalWrite(7, HIGH);
-    delayMicroseconds(delayValue);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    delayMicroseconds(delayValue);
+    tone(6, 440);
+    tone(7, 440);
   }
+  else if (data == '10')
+  {
+    tone(6, 659);
+    tone(7, 659);
+  }
+  else if (data == '11')
+  {
+    tone(6, 988);
+    tone(7, 988);
+  }
+  else if (data == '12')
+  {
+    tone(6, 1397);
+    tone(7, 1397);
+  }
+  else if (data == '13')
+  {
+    tone(6, 2093);
+    tone(7, 2093);
+  }
+  else if (data == '14')
+  {
+    tone(6, 3136);
+    tone(7, 3136);
+  }
+  else if (data == '15')
+  {
+    tone(6, 4699);
+    tone(7, 4699);
+  } 
 }
+
+
+
+
 
 
 void ultrasonic()
