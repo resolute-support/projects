@@ -220,7 +220,7 @@ void check_bluetooth()
   else if (data == '6')
   {
     tone(6, 131);
-    tone(7, 131;
+    tone(7, 131);
   }
   else if (data == '7')
   {
@@ -382,18 +382,18 @@ void new_route()
 
 void line_left()
 {
-  digitalWrite(8,HIGH);
-  analogWrite(9, 90);
-  pinMode(A1, OUTPUT);
-  digitalWrite(A1,LOW);
-  analogWrite(10,power);
-}
-
-void line_right()
-{
   digitalWrite(8,LOW);
   analogWrite(9,power);
   pinMode(A1, OUTPUT);
   digitalWrite(A1,LOW);
-  analogWrite(10, 90);
+  analogWrite(10, 60);
+}
+
+void line_right()
+{
+  digitalWrite(8,HIGH);
+  analogWrite(9, 60);
+  pinMode(A1, OUTPUT);
+  digitalWrite(A1,LOW);
+  analogWrite(10,power);
 }
