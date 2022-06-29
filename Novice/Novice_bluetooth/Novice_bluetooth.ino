@@ -135,6 +135,7 @@ void setup()
   Serial.begin(9600);
   pinMode(5, INPUT);
   pinMode(4, INPUT);
+  pinMode(10, OUTPUT);
   pinMode(9, OUTPUT);
   pinMode(8, OUTPUT);
   pinMode(A1, OUTPUT);
@@ -268,9 +269,6 @@ void check_bluetooth()
     tone(7, 4699);
   } 
 }
-
-
-
 
 
 
