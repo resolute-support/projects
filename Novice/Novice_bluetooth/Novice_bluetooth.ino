@@ -363,6 +363,8 @@ void still()
   pinMode(A1, OUTPUT);
   digitalWrite(A1,HIGH);
   analogWrite(10,0);
+  noTone(6);
+  noTone(7);
 }
 
 void new_route()
