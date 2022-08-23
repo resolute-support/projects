@@ -322,7 +322,7 @@ void line()
 void Left()
 
 {
-  digitalWrite(8,LOW);
+  digitalWrite(8,HIGH);
   analogWrite(9,power);
   pinMode(A1, OUTPUT);
   digitalWrite(A1,LOW);
@@ -331,7 +331,7 @@ void Left()
 
 void back()
 {
-  digitalWrite(8,LOW);
+  digitalWrite(8,HIGH);
   analogWrite(9,power);
   pinMode(A1, OUTPUT);
   digitalWrite(A1,HIGH);
@@ -340,7 +340,7 @@ void back()
 
 void straight()
 {
-  digitalWrite(8,HIGH);
+  digitalWrite(8,LOW);
   analogWrite(9,power);
   pinMode(A1, OUTPUT);
   digitalWrite(A1,LOW);
@@ -349,8 +349,8 @@ void straight()
 
 void Right()
 {
-  digitalWrite(8,HIGH);
-  analogWrite(9,138);
+  digitalWrite(8,LOW);
+  analogWrite(9,power);
   pinMode(A1, OUTPUT);
   digitalWrite(A1,HIGH);
   analogWrite(10,power);
@@ -381,7 +381,7 @@ void new_route()
 
 void line_left()
 {
-  digitalWrite(8,LOW);
+  digitalWrite(8,HIGH);
   analogWrite(9,power);
   pinMode(A1, OUTPUT);
   digitalWrite(A1,LOW);
@@ -390,9 +390,9 @@ void line_left()
 
 void line_right()
 {
-  digitalWrite(8,HIGH);
+  digitalWrite(8,LOW);
   analogWrite(9, 60);
   pinMode(A1, OUTPUT);
-  digitalWrite(A1,LOW);
+  digitalWrite(A1,HIGH);
   analogWrite(10,power);
 }
