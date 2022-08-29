@@ -1,41 +1,43 @@
-String button;
+String button_press() {
+  delay(10);
+  int reading = analogRead(A4);
+  if (reading > 300 and reading < 443) {
+    return "Bottom";
+  }
+  else if (reading > 443 and reading < 470) {
+    return "Right";
+  }
+  else if (reading > 470 and reading < 505) {
+    return "Mid";
+  }
+  else if (reading > 505 and reading < 552) {
+    return "Left";
+  }
+  else if (reading > 552 and reading < 598) {
+    return "Top right";
+  }
+  else if (reading > 598 and reading < 722) {
+    return "Top";
+  }
+  else if (reading > 722 and reading < 1023) {
+    return "Top left";
+  }
+  if (reading < 300) {
+    return "None";
+  }
+}
 
-// the setup routine runs once when you press reset:
-void setup() {
-  pinMode(A4,INPUT);
-  pinMode(A6,INPUT);
+void setup()
+{
+  pinMode(A4, INPUT);
   Serial.begin(9600);
 }
 
-// the loop routine runs over and over again forever:
-void loop() {
-  int sensorValue = analogRead(A6);
-  float voltage = sensorValue * (100.0 / 1023.0);
-  Serial.print(sensorValue);
-  Serial.print("-------");
-  if (analogRead(A4) == 235) {
-    button = "none";
-  }
-  if (analogRead(A4) == 660) {
-    button = "top";
-  }
-  if (analogRead(A4) == 432) {
-    button = "bottom";
-  }
-  if (analogRead(A4) == 456) {
-    button = "right";
-  }
-  if (analogRead(A4) == 526) {
-    button = "left";
-  }
-  if (analogRead(A4) == 486) {
-    button = "center";
-  }
-  if (analogRead(A4) == 580) {
-    button = "top-right";
-  }
-  if (analogRead(A4) == 788) {
-    button = "top-left";
-  }
-  Serial.println(button);
+void loop()
+{
+  Serial.print(analogRead(A6));
+  Serial.print("  -   ");
+  Serial.print(analogRead(A4));
+  Serial.print("  -   ");
+  Serial.println(button_press());
 }
